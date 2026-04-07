@@ -7,6 +7,7 @@
     "services/api"
   ],
   "scripts": {
+    "start": "cd services/api && uvicorn app.main:app --host 0.0.0.0 --port $PORT",
     "mobile": "cd apps/mobile && npx expo start",
     "mobile:ios": "cd apps/mobile && npx expo run:ios",
     "mobile:android": "cd apps/mobile && npx expo run:android",
