@@ -1,0 +1,69 @@
+# ============================================================
+# QuantifyU — .gitignore
+# ============================================================
+
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# AI Models (large binary files)
+services/api/app/ai/models/*.pth
+services/api/app/ai/models/*.pt
+services/api/app/ai/models/*.onnx
+services/api/app/ai/models/*.bin
+
+# Environment variables
+.env
+.env.local
+.env.production
+!.env.example
+
+# Expo
+apps/mobile/.expo/
+apps/mobile/dist/
+apps/mobile/web-build/
+
+# iOS / Android build output
+*.ipa
+*.apk
+*.aab
+apps/mobile/ios/
+apps/mobile/android/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Test / Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+coverage/
+
+# Logs
+*.log
+logs/
+
+# Docker
+.dockerignore
+
+# Supabase
+supabase/.temp/

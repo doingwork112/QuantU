@@ -1,0 +1,23 @@
+# ============================================================
+# QuantifyU — 本地开发 Docker Compose
+# ============================================================
+
+services:
+  api:
+    build:
+      context: ./services/api
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./services/api/.env
+    environment:
+      - API_ENV=development
+    volumes:
+      - ./services/api/app:/app/app  # 热重载
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

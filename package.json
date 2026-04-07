@@ -1,0 +1,23 @@
+{
+  "name": "quantifyu",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/mobile",
+    "services/api"
+  ],
+  "scripts": {
+    "mobile": "cd apps/mobile && npx expo start",
+    "mobile:ios": "cd apps/mobile && npx expo run:ios",
+    "mobile:android": "cd apps/mobile && npx expo run:android",
+    "api": "cd services/api && uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "api:prod": "cd services/api && gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT",
+    "db:migrate": "cd supabase && supabase db push",
+    "db:reset": "cd supabase && supabase db reset",
+    "test:api": "cd services/api && python -m pytest tests/ -v",
+    "test:mobile": "cd apps/mobile && npx jest",
+    "lint": "cd apps/mobile && npx eslint . --ext .ts,.tsx",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  }
+}

@@ -1,0 +1,44 @@
+# QuantifyU Backend Dependencies
+
+# Web框架
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.18
+
+# 数据验证 & 配置
+pydantic[email]==2.10.0
+pydantic-settings==2.7.0
+
+# Supabase
+supabase==2.11.0
+python-jose[cryptography]==3.3.0
+
+# AI/ML — 面部美学评分
+torch==2.2.2
+torchvision==0.17.2
+timm==1.0.12                         # ViT-FBP模型架构 (vit_base_patch16_224)
+
+# AI/ML — 身体姿态 & 面部关键点
+mediapipe==0.10.21                   # Pose(33点) + FaceMesh(468点)
+
+# 图像处理
+Pillow==11.0.0
+opencv-python-headless==4.10.0.84
+numpy==1.26.4
+
+# 加密
+cryptography==44.0.0
+
+# HTTP客户端
+httpx==0.28.0
+
+# 工具
+python-dotenv==1.0.1
+loguru==0.7.3
+
+# 生产服务器
+gunicorn==22.0.0
+
+# 测试
+pytest==8.3.4
+pytest-asyncio==0.24.0

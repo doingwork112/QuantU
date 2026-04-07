@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "QuantifyU",
+    "slug": "quantifyu",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "quantifyu",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0F0D2E"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.quantifyu.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "QuantifyU needs camera access for AI beauty scoring photos",
+        "NSPhotoLibraryUsageDescription": "QuantifyU needs photo library access to select photos for AI scoring"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0F0D2E"
+      },
+      "package": "com.quantifyu.app",
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE"]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-image-picker",
+      "expo-haptics",
+      "expo-crypto",
+      [
+        "expo-build-properties",
+        {
+          "ios": { "newArchEnabled": true },
+          "android": { "newArchEnabled": true }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "YOUR_EAS_PROJECT_ID"
+      }
+    }
+  }
+}
